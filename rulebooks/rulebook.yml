@@ -2,7 +2,7 @@
 - name: Capture alertmanager alerts
   hosts: localhost
   sources:
-    - sabre1041.eda.alertmanager:
+    - ansible.eda.alertmanager:
         host: 0.0.0.0
         port: 5050
         data_alerts_path: alerts
