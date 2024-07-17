@@ -25,4 +25,4 @@
       condition: event.alert.labels.alertname == "ClusterUp" 
       action:
         debug:
-          msg: "bla bla bla motherfucker"
+          msg: "bla bla bla motherfucker {{ foo.field1 }}"
