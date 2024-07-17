@@ -1,7 +1,6 @@
 ---
 - name: Capture alertmanager alerts
   hosts: localhost
-  vars_files: vars.yml
   sources:
     - ansible.eda.alertmanager:
         host: 0.0.0.0
@@ -25,4 +24,10 @@
       condition: event.alert.labels.alertname == "ClusterUp" 
       action:
         debug:
-          msg: "bla bla bla motherfucker {{ foo.field1 }}"
+          msg: "bla bla bla"
+
+    - name: SELinux was enabled
+      condition: event.alert.labels.alertname == "ClusterUp" 
+      action:
+        debug:
+          msg: "fooood"
