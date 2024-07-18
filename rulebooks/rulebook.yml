@@ -11,15 +11,6 @@
         skip_original_data: true
 
   rules:
-    # - name: SELinux was disabled
-    #   condition: event.alert.labels.alertname == "selinux disabled" and event.alert.status == "firing"
-    #   action:
-    #     run_job_template:
-    #       name: Apply baseline
-    #       organization: Default
-    #       job_args:
-    #         limit: "{{ event.meta.hosts }}"
-
     - name: SELinux was enabled
       condition: event.alert.labels.alertname == "ClusterUp" 
       action:
@@ -31,14 +22,3 @@
       action:
         debug:
           msg: "fooood"
-
-    # - name: SELinux was enabled
-    #   condition: event.alert.labels.alertname == "ClusterUp"
-    #   action:
-    #     run_module:
-    #       name: ansible.builtin.git
-    #       module_args:
-    #           repo: 'https://github.com/sfine01/demo-event-driven-ansible.git'
-    #           dest: /tmp/checkout
-    #           single_branch: yes
-    #           version: 'main'
