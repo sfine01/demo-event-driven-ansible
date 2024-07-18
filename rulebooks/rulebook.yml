@@ -31,3 +31,14 @@
       action:
         debug:
           msg: "fooood"
+
+    - name: SELinux was enabled
+      condition: event.alert.labels.alertname == "ClusterUp"
+      action:
+        ansible.builtin.git:
+          repo: 'https://github.com/sfine01/demo-event-driven-ansible.git'
+          dest: /tmp/checkout
+          single_branch: yes
+          version: master
+
+
